@@ -13,6 +13,8 @@ namespace VoidFixes
             return "VoidFixes";
         }
 
+        bool DebugLoggingGUIValue;
+
         bool DestroyJumpingShipsOnLeavePatchGUIValue;
         bool DestroySpawnersOnLeavePatchGUIValue;
         bool DestroImpactFXOnLeavePatchGUIValue;
@@ -29,6 +31,8 @@ namespace VoidFixes
         {
             Label("Configuration for various fixes. Some fixes require a restart to take effect.");
             Label(string.Empty);
+            DrawValueConfig(DebugLogging, ref DebugLoggingGUIValue);
+
             DrawValueConfig(DestroyJumpingShipsOnLeavePatch, ref DestroyJumpingShipsOnLeavePatchGUIValue);
             DrawValueConfig(DestroySpawnersOnLeavePatch, ref DestroySpawnersOnLeavePatchGUIValue);
             DrawValueConfig(DestroImpactFXOnLeavePatch, ref DestroImpactFXOnLeavePatchGUIValue);
@@ -54,6 +58,7 @@ namespace VoidFixes
 
         public override void OnOpen()
         {
+            DebugLoggingGUIValue = DebugLogging.Value;
             DestroyJumpingShipsOnLeavePatchGUIValue = DestroyJumpingShipsOnLeavePatch.Value;
             DestroySpawnersOnLeavePatchGUIValue = DestroySpawnersOnLeavePatch.Value;
             DestroImpactFXOnLeavePatchGUIValue = DestroImpactFXOnLeavePatch.Value;
