@@ -16,6 +16,7 @@ namespace VoidFixes
         private void Awake()
         {
             Log = Logger;
+            DebugLogging = Config.Bind("General", "DebugLogging", true, "Enables Logging");
             DestroyJumpingShipsOnLeavePatch = Config.Bind("Patches", "DestroyJumpingShipsOnLeave", true, "Host-side, effects networking. Destroys ships jumping in on sector leave (they don't normally get destroyed, just hidden).");
             DestroySpawnersOnLeavePatch = Config.Bind("Patches", "DestroySpawnersOnLeave", true, "Host-side, effects networking. Destroys spawners on sector leave (they don't normally get destroyed, just hidden).");
             DestroImpactFXOnLeavePatch = Config.Bind("Patches", "DestroyImpactFXOnLeave", true, "Client-side, Destroys old impactFX on sector leave (they don't normally get destroyed until there's 1024 of a given effect).");
@@ -45,6 +46,7 @@ namespace VoidFixes
             internal static ConfigEntry<bool> CameraAttachPatch;
             internal static ConfigEntry<bool> DeltaTimePatch;
             internal static ConfigEntry<bool> AtmosphereFix;
+            internal static ConfigEntry<bool> DebugLogging;
         }
     }
 }

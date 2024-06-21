@@ -8,7 +8,7 @@ namespace VoidFixes
 
         public override string Author => "Dragon, 18107";
 
-        public override string Description => "Fixes or provides the ability to fix bugs. Client-Side";
+        public override string Description => "Provides bug fixes, Log Error eliminations, and Optimizations. Client/Host-Side";
     }
 }
 // Bug fix idea: fix fighters not carring about distance or obstacles when shooting players. - reqires removing current damage system and allowing fighter projectiles to damage player

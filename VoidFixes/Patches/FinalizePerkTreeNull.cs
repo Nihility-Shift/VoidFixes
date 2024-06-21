@@ -19,13 +19,13 @@ namespace VoidFixes.Patches
         //at UI.Token.PerkTreeController.OnTreeLoaded(UI.Token.PerkTreeVE tree) [0x0009c] in <939d71a410104d17a02c3d2d0912a345>:0 
         //at UI.Token.PerkTreeVE.DelayedSetup() [0x0003d] in <939d71a410104d17a02c3d2d0912a345>:0 
 
-        static bool Prefix(LogBookManager __instance, PerkTreeController ___treeController)
+        static bool Prefix(PerkTreeController ___treeController)
         {
             //this.treeController = new PerkTreeController(ResourceAssetContainer<PerkContainer, Perk, PerkDef>.Instance.AssetDescriptions, this.doc.rootVisualElement, this.Events, base.GetComponent<ILocalizationProvider>(), true);
 
             if (BepinPlugin.Bindings.FinalizePerkTreeNullPatch.Value && ___treeController == null)
             {
-                if (Commands.DEBUG) BepinPlugin.Log.LogWarning("LogBookManager TreeController is null, stopping early.");
+                if (BepinPlugin.Bindings.DebugLogging.Value) BepinPlugin.Log.LogWarning("LogBookManager TreeController is null, stopping early.");
                 //GameObject.Destroy(__instance.gameObject);
                 return false;
             }
@@ -35,13 +35,13 @@ namespace VoidFixes.Patches
 
 
     [HarmonyPatch(typeof(TokenTerminal), "UpdateTrees")]
-    class patchclass
+    class TokenTerminalPatch
     {
         static bool Prefix(PerkTreeController ___treeController)
         {
             if (BepinPlugin.Bindings.FinalizePerkTreeNullPatch.Value && ___treeController == null)
             {
-                if (Commands.DEBUG) BepinPlugin.Log.LogWarning("TokenTerminal TreeController is null, stopping early.");
+                if (BepinPlugin.Bindings.DebugLogging.Value) BepinPlugin.Log.LogWarning("TokenTerminal TreeController is null, stopping early.");
                 return false;
             }
             return true;

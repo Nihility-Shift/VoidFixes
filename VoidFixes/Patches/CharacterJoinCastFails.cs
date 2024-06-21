@@ -32,7 +32,7 @@ namespace VoidFixes.Patches
 
             if (stream.PeekNext().GetType() != typeof(short))
             {
-                if (Commands.DEBUG) BepinPlugin.Log.LogWarning("Not starting with a short, stopping early.");
+                if (BepinPlugin.Bindings.DebugLogging.Value) BepinPlugin.Log.LogWarning("Not starting with a short, stopping early.");
                 return false;
             }
             return true;
@@ -60,7 +60,7 @@ namespace VoidFixes.Patches
 
             if (stream.PeekNext().GetType() != typeof(byte))
             {
-                if (Commands.DEBUG) BepinPlugin.Log.LogWarning("Not starting with a byte, stopping early.");
+                if (BepinPlugin.Bindings.DebugLogging.Value) BepinPlugin.Log.LogWarning("Not starting with a byte, stopping early.");
                 return false;
             }
             return true;
@@ -88,7 +88,7 @@ namespace VoidFixes.Patches
 
             if (stream.PeekNext().GetType() != typeof(byte))
             {
-                if (Commands.DEBUG) BepinPlugin.Log.LogWarning("Not starting with a byte, stopping early.");
+                if (BepinPlugin.Bindings.DebugLogging.Value) BepinPlugin.Log.LogWarning("Not starting with a byte, stopping early.");
                 return false;
             }
             return true;

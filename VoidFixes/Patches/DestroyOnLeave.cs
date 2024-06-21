@@ -39,7 +39,7 @@ namespace VoidFixes.Patches
                 foreach (Object FO in FoundObjects)
                 {
                     Spawner ConvertedFO = (Spawner)FO;
-                    if (Commands.DEBUG) BepinPlugin.Log.LogInfo("Attempting to photon destroy a spawner");
+                    if (BepinPlugin.Bindings.DebugLogging.Value) BepinPlugin.Log.LogInfo("Attempting to photon destroy a spawner");
                     PhotonNetwork.Destroy(ConvertedFO.gameObject);
                 }
             }
@@ -56,13 +56,13 @@ namespace VoidFixes.Patches
                     //Targeted objects are almost always inactive. They are also usually not in the current sector do to jumping. (I accidentally destroyed wreckages lol)
                     if (!convertedFO.isActiveAndEnabled && convertedFO.Sector != CurrentSector)
                     {
-                        if (Commands.DEBUG) BepinPlugin.Log.LogInfo("Attempting to photon destroy " + convertedFO.DisplayName);
+                        if (BepinPlugin.Bindings.DebugLogging.Value) BepinPlugin.Log.LogInfo("Attempting to photon destroy " + convertedFO.DisplayName);
 
 
                         NpcImpulseJumper jumper = convertedFO.GetComponent<NpcImpulseJumper>();
                         if (jumper != null) //find and destroy entry object from Impulse Jumper
                         {
-                            if (Commands.DEBUG) BepinPlugin.Log.LogInfo("Found ImpulseJumper");
+                            if (BepinPlugin.Bindings.DebugLogging.Value) BepinPlugin.Log.LogInfo("Found ImpulseJumper");
                             PhotonNetwork.Destroy(jumper.state.SectorEntryObject);
                         }
                         else //else find and destroy entry object from NPCAI
@@ -73,7 +73,7 @@ namespace VoidFixes.Patches
                                 BehJumpToSector JTSBeh = jumperNPC.ActiveBehaviour as BehJumpToSector;
                                 if (JTSBeh != null)
                                 {
-                                    if (Commands.DEBUG) BepinPlugin.Log.LogInfo("Found NpcAI Beh");
+                                    if (BepinPlugin.Bindings.DebugLogging.Value) BepinPlugin.Log.LogInfo("Found NpcAI Beh");
                                     ActJumpToSector JTSAct = (ActJumpToSector)actJumpToSectorActionFI.GetValue(JTSBeh);
                                     PhotonNetwork.Destroy((GameObject)sectorEntryObjectFI.GetValue(JTSAct));
                                 }

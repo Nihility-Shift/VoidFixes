@@ -23,8 +23,6 @@ namespace VoidFixes
 
         static string subcommands = "pickup, drop";
 
-        internal static bool DEBUG = true;
-
         //pickup fix
         static FieldInfo LockInteractionFI = AccessTools.Field(typeof(CarryableInteract), "lockInteraction");
         static FieldInfo CarryableInsertPromiseFI = AccessTools.Field(typeof(CarrierCarryableHandler), "carryableInsertPromise");
@@ -80,8 +78,8 @@ namespace VoidFixes
                     break;
                 case "debug":
                     {
-                        DEBUG = !DEBUG;
-                        Messaging.Echo("Debug now " + DEBUG.ToString());
+                        BepinPlugin.Bindings.DebugLogging.Value = !BepinPlugin.Bindings.DebugLogging.Value;
+                        Messaging.Echo("Debug now " + BepinPlugin.Bindings.DebugLogging.Value.ToString());
                     }
                     break;
                 default:

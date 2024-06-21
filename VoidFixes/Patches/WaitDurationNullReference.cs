@@ -26,7 +26,7 @@ namespace VoidFixes.Patches
         {
             if (!BepinPlugin.Bindings.WaitDurationNullPatch.Value || GameSessionSectorManager.Instance.ActiveSector != null) return true;
 
-            if (Commands.DEBUG) BepinPlugin.Log.LogInfo("Intercepting WaitDuration.Run");
+            if (BepinPlugin.Bindings.DebugLogging.Value) BepinPlugin.Log.LogInfo("Intercepting WaitDuration.Run");
             //This is effectively what would normally happen, but the exception is avoided. I attempted setting the timer to the default duration, but it would keep the countdown running until the next jump.
             return false;
         }
