@@ -1,10 +1,5 @@
 ﻿using CG.Game.SpaceObjects.Controllers;
-using CG.Game.SpaceObjects.Controllers.Scout;
-using CG.Ship.Modules;
 using CG.Ship.Modules.Weapons;
-using Gameplay.Atmosphere;
-using Gameplay.CompositeWeapons;
-using Gameplay.Ship;
 using HarmonyLib;
 using System.Collections.Generic;
 using System.Reflection.Emit;

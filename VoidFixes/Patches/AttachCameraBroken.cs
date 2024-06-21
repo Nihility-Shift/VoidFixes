@@ -1,10 +1,5 @@
 ﻿using HarmonyLib;
-using Opsive.UltimateCharacterController.Camera;
 using Opsive.UltimateCharacterController.FirstPersonController.Character;
-using UnityEngine;
-using Opsive.Shared.Game;
-using System.Reflection;
-using VoidManager;
 
 namespace VoidFixes.Patches
 {
