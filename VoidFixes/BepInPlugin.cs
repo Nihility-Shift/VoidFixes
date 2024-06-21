@@ -19,7 +19,7 @@ namespace VoidFixes
             DebugLogging = Config.Bind("General", "DebugLogging", true, "Enables Logging");
             DestroyJumpingShipsOnLeavePatch = Config.Bind("Patches", "DestroyJumpingShipsOnLeave", true, "Host-side, effects networking. Destroys ships jumping in on sector leave (they don't normally get destroyed, just hidden).");
             DestroySpawnersOnLeavePatch = Config.Bind("Patches", "DestroySpawnersOnLeave", true, "Host-side, effects networking. Destroys spawners on sector leave (they don't normally get destroyed, just hidden).");
-            DestroImpactFXOnLeavePatch = Config.Bind("Patches", "DestroyImpactFXOnLeave", true, "Client-side, Destroys old impactFX on sector leave (they don't normally get destroyed until there's 1024 of a given effect).");
+            DestroImpactFXOnLeavePatch = Config.Bind("Patches", "DestroyImpactFXOnLeave", true, "Client-side, Destroys old impactFX on sector leave (they don't normally get destroyed until there's 1024 of a given effect or the session ends).");
             FinalizePerkTreeNullPatch = Config.Bind("Patches", "FinalizePerkTreeNull", true, "Client-Side, Fixes exception which occurs when a player character is loaded.");
             FrigateEngineeringDoorFix = Config.Bind("Patches", "FrigateEngineeringDoorFix", true, "Client-Side, Fixes frigate engineering door being closed when joining a game.");
             SetCarriableActivePatch = Config.Bind("Patches", "SetCarriableActive", true, "Client-Side, Attempts to fix picking up invisible items which then locks pickup ability. Try '/fix pickup' command if a similar issue is found.");
