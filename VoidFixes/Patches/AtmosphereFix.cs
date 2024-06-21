@@ -16,6 +16,8 @@ namespace VoidFixes.Patches
         [HarmonyPatch("ApplyPressureIncrease")]
         static bool ApplyPressureIncrease()
         {
+            if (!BepinPlugin.Bindings.AtmosphereFix.Value) return true;
+
             return false; //Don't run original method
         }
 
@@ -23,6 +25,9 @@ namespace VoidFixes.Patches
         [HarmonyPatch("ApplyOxygenIncrease")]
         static void ApplyOxygenIncrease(Atmosphere ____atmosphere)
         {
+            if (!BepinPlugin.Bindings.AtmosphereFix.Value) return;
+
+
             foreach (Room room in ____atmosphere.Atmospheres.keys)
             {
                 AtmosphereValues atmosphereValues = (AtmosphereValues)GetAtmosphereValuesMethod.Invoke(____atmosphere, new object[] { room });
