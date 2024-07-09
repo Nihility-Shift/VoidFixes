@@ -6,7 +6,7 @@
 
 Version 1.0.0  
 For Game Version 0.26.1  
-Developed by Dragon, 18107 
+Developed by Dragon, 18107  
 Requires VoidManager 1.1.2
 
 
