@@ -3,6 +3,7 @@ using Gameplay.Carryables;
 using HarmonyLib;
 using RSG;
 using System;
+using System.Collections.Generic;
 using System.Reflection;
 using VoidManager.Chat.Router;
 using VoidManager.Utilities;
@@ -92,6 +93,12 @@ namespace VoidFixes
                         Messaging.Echo("Debug now " + BepinPlugin.Bindings.DebugLogging.Value.ToString());
                     }
                     break;
+                /*case "debugpo":
+                    {
+                        Patches.PhysicsOrder.StartDebug();
+                        Messaging.Echo("Debug physics order starting");
+                    }
+                    break;*/
                 default:
                     Messaging.Echo($"Subcommand '{args[0]}' not found. Subcommands: {subcommands}");
                     break;

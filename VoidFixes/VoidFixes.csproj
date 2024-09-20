@@ -25,6 +25,7 @@
 
   <ItemGroup>
     <Compile Remove="Patches\EVAShootDamageTimer.cs" />
+    <Compile Remove="Patches\PhysicsOrder.cs" />
   </ItemGroup>
 
   <ItemGroup>
