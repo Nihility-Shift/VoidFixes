@@ -37,7 +37,6 @@ namespace VoidFixes
             DrawValueConfig(DestroySpawnersOnLeavePatch, ref DestroySpawnersOnLeavePatchGUIValue);
             DrawValueConfig(DestroImpactFXOnLeavePatch, ref DestroImpactFXOnLeavePatchGUIValue);
             DrawValueConfig(FinalizePerkTreeNullPatch, ref FinalizePerkTreeNullPatchGUIValue);
-            DrawValueConfig(FrigateEngineeringDoorFix, ref FrigateEngineeringDoorFixGUIValue);
             DrawValueConfig(SetCarriableActivePatch, ref SetCarriableActivePatchGUIValue);
             DrawValueConfig(CharacterJoinCastsPatch, ref CharacterJoinCastsPatchGUIValue);
             DrawValueConfig(WaitDurationNullPatch, ref WaitDurationNullPatchGUIValue);
@@ -63,7 +62,6 @@ namespace VoidFixes
             DestroySpawnersOnLeavePatchGUIValue = DestroySpawnersOnLeavePatch.Value;
             DestroImpactFXOnLeavePatchGUIValue = DestroImpactFXOnLeavePatch.Value;
             FinalizePerkTreeNullPatchGUIValue = FinalizePerkTreeNullPatch.Value;
-            FrigateEngineeringDoorFixGUIValue = FrigateEngineeringDoorFix.Value;
             SetCarriableActivePatchGUIValue = SetCarriableActivePatch.Value;
             CharacterJoinCastsPatchGUIValue = CharacterJoinCastsPatch.Value;
             WaitDurationNullPatchGUIValue = WaitDurationNullPatch.Value;
