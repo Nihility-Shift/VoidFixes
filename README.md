@@ -22,7 +22,6 @@ Requires:  BepInEx-BepInExPack-5.4.2100, VoidCrewModdingTeam-VoidManager-1.2.0
 - Fixes
  - AtmosphereFix - Host-Side, Fixes O2 and pressure not filling and dropping at the same rate, leading to pressure being lower than oxygen.
  - SetCarriableActive - Attempts to fix picking up invisible items which then locks pickup ability.
- - FrigateEngineeringDoorFix - Fixes frigate engineering door being closed when joining a game.
  - DeltaTime - Fixes FPS effecting Drone EVA Player targetting and KPD barrel spin.
 - Optimizations
  - DestroyJumpingShipsOnLeave - Host-side, effects networking. Destroys ships jumping in on sector leave (they don't normally get destroyed, just hidden). leads to various enemy ships, care packages, and Reclaimers being left in a hidden state.
