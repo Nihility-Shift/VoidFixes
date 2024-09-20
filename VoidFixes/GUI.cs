@@ -10,7 +10,7 @@ namespace VoidFixes
     {
         public override string Name()
         {
-            return "VoidFixes";
+            return MyPluginInfo.USERS_PLUGIN_NAME;
         }
 
         bool DebugLoggingGUIValue;

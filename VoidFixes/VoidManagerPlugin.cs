@@ -6,18 +6,11 @@ namespace VoidFixes
     {
         public override MultiplayerType MPType => MultiplayerType.Client;
 
-        public override string Author => "Dragon, 18107";
+        public override string Author => MyPluginInfo.PLUGIN_AUTHORS;
 
-        public override string Description => "Provides bug fixes, Log Error eliminations, and Optimizations. Client/Host-Side";
+        public override string Description => MyPluginInfo.PLUGIN_DESCRIPTION;
+
+        public override string ThunderstoreID => MyPluginInfo.PLUGIN_THUNDERSTORE_ID;
     }
 }
 // Bug fix idea: fix fighters not carring about distance or obstacles when shooting players. - reqires removing current damage system and allowing fighter projectiles to damage player
-//
-//
-//
-//
-//
-//
-//
-//
-//
