@@ -93,12 +93,6 @@ namespace VoidFixes
                         Messaging.Echo("Debug now " + BepinPlugin.Bindings.DebugLogging.Value.ToString());
                     }
                     break;
-                /*case "debugpo":
-                    {
-                        Patches.PhysicsOrder.StartDebug();
-                        Messaging.Echo("Debug physics order starting");
-                    }
-                    break;*/
                 default:
                     Messaging.Echo($"Subcommand '{args[0]}' not found. Subcommands: {subcommands}");
                     break;

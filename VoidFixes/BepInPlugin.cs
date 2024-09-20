@@ -26,7 +26,6 @@ namespace VoidFixes
             CharacterJoinCastsPatch = Config.Bind("Patches", "CharacterJoinCasts", true, "Client-Side, Fixes exceptions which occur when a player character is loaded.");
             WaitDurationNullPatch = Config.Bind("Patches", "WaitDurationNull", true, "Client-Side, Fixes exception which occurs if a reclaimer timer starts while jumping out of the current sector.");
             CameraAttachPatch = Config.Bind("Patches", "CameraAttach", true, "Client-Side, Fixes exception which occurs when a player character is loaded.");
-            //PhysicsOrderPatch = Config.Bind("Patches", "PhysicsOrder", true, "Client-Side, Fixes player location lag caused by bad order of physics simulation");
             DeltaTimePatch = Config.Bind("Patches", "DeltaTime", true, "Multiple patches on both client and host. Currently affects EVATargetting and KPD spinning barrels. Requires Restart.");
             AtmosphereFix = Config.Bind("Patches", "AtmosphereFix", true, "Host-Side, Fixes O2 and pressure not filling and dropping at the same rate, leading to pressure being lower than oxygen.");
 
@@ -45,7 +44,6 @@ namespace VoidFixes
             internal static ConfigEntry<bool> CharacterJoinCastsPatch;
             internal static ConfigEntry<bool> WaitDurationNullPatch;
             internal static ConfigEntry<bool> CameraAttachPatch;
-            //internal static ConfigEntry<bool> PhysicsOrderPatch;
             internal static ConfigEntry<bool> DeltaTimePatch;
             internal static ConfigEntry<bool> AtmosphereFix;
             internal static ConfigEntry<bool> DebugLogging;

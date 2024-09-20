@@ -24,7 +24,6 @@ namespace VoidFixes
         bool CharacterJoinCastsPatchGUIValue;
         bool WaitDurationNullPatchGUIValue;
         bool CameraAttachPatchGUIValue;
-        //bool PhysicsOrderPatchGUIValue;
         bool DeltaTimePatchGUIValue;
         bool AtmosphereFixGUIValue;
 
@@ -43,7 +42,6 @@ namespace VoidFixes
             DrawValueConfig(CharacterJoinCastsPatch, ref CharacterJoinCastsPatchGUIValue);
             DrawValueConfig(WaitDurationNullPatch, ref WaitDurationNullPatchGUIValue);
             DrawValueConfig(CameraAttachPatch, ref CameraAttachPatchGUIValue);
-            //DrawValueConfig(PhysicsOrderPatch, ref PhysicsOrderPatchGUIValue);
             DrawValueConfig(DeltaTimePatch, ref DeltaTimePatchGUIValue);
             DrawValueConfig(AtmosphereFix, ref AtmosphereFixGUIValue);
         }
@@ -70,7 +68,6 @@ namespace VoidFixes
             CharacterJoinCastsPatchGUIValue = CharacterJoinCastsPatch.Value;
             WaitDurationNullPatchGUIValue = WaitDurationNullPatch.Value;
             CameraAttachPatchGUIValue = CameraAttachPatch.Value;
-            PhysicsOrderPatchGUIValue = PhysicsOrderPatch.Value;
             DeltaTimePatchGUIValue = DeltaTimePatch.Value;
             AtmosphereFixGUIValue = AtmosphereFix.Value;
         }
