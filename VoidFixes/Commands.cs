@@ -11,6 +11,16 @@ namespace VoidFixes
 {
     class Commands : ChatCommand
     {
+        List<Argument> arguments;
+
+        public Commands()
+        {
+            arguments = new List<Argument>()
+            {
+                new Argument(new string[] { "drop", "pickup"})
+            };
+        }
+
         public override string[] CommandAliases()
         {
             return new string[] { "fix" };
@@ -18,7 +28,7 @@ namespace VoidFixes
 
         public override string Description()
         {
-            return "Provides input controls for fixing bugs. Subcommands: " + subcommands;
+            return "Provides input controls for fixing bugs. Subcommands: " + arguments[0].names;
         }
 
         static string subcommands = "pickup, drop";
@@ -91,6 +101,11 @@ namespace VoidFixes
         public override string[] UsageExamples()
         {
             return new string[] { "/fix [subcommand]"};
+        }
+
+        public override List<Argument> Arguments()
+        {
+            return arguments;
         }
     }
 }

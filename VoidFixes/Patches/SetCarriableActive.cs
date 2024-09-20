@@ -22,6 +22,10 @@ namespace VoidFixes.Patches
     // On player join, the host tells the joining player that the objects at the given id are inactive, and the joining player thinks the invis objects are objects on the ship.
     //
     //
+    // Cause update: found a wierd issue where any client releasing a carryable in the right side of the destroyer noze.
+    //
+    //
+    //
     //- CarryableInteract.LockInteraction == true
     //- After unlocking lockInteraction and trying to grab a carriable, got exception 'System.Exception: another request pending'
     //- Occurs in CarrierCarryableHandler.TryInsertCarryable when Promise.CurState == PromiseState.Pending
