@@ -22,6 +22,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Remove="Patches\EVAShootDamageTimer.cs" />
+    <Compile Remove="Patches\FrigateEngineeringDoorFix.cs" />
     <Compile Remove="Patches\PhysicsOrder.cs" />
   </ItemGroup>
   <ItemGroup>
