@@ -39,8 +39,6 @@ Requires: [Dependencies]
   - Various fixes while client.
 - ✅ Host
   - Various fixes while hosting.
-- ✅ Session
-  - Requires the room to be marked as Mod_Session.
 
 ---------------------
 

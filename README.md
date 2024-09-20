@@ -39,8 +39,6 @@ Requires:  BepInEx-BepInExPack-5.4.2100, VoidCrewModdingTeam-VoidManager-1.2.0
   - Various fixes while client.
 - ✅ Host
   - Various fixes while hosting.
-- ✅ Session
-  - Requires the room to be marked as Mod_Session.
 
 ---------------------
 
