@@ -15,18 +15,18 @@ Requires:  BepInEx-BepInExPack-5.4.2100, VoidCrewModdingTeam-VoidManager-1.2.0
 ### 💡 Functions - **Provides bug fixes, Log Error eliminations, and Optimizations**
 
 - Log Error Eliminations
- - CameraAttachment - Occurs when a player character is loaded.
- - WaitDurationNull - Occurs if a reclaimer timer starts while jumping out of the current sector.
- - FinalizePerkTree - Occurs when a player character is loaded.
- - CharacterJoinCasts - occur when a player character is loaded.
+  - CameraAttachment - Occurs when a player character is loaded.
+  - WaitDurationNull - Occurs if a reclaimer timer starts while jumping out of the current sector.
+  - FinalizePerkTree - Occurs when a player character is loaded.
+  - CharacterJoinCasts - occur when a player character is loaded.
 - Fixes
- - AtmosphereFix - Host-Side, Fixes O2 and pressure not filling and dropping at the same rate, leading to pressure being lower than oxygen.
- - SetCarriableActive - Attempts to fix picking up invisible items which then locks pickup ability.
- - DeltaTime - Fixes FPS effecting Drone EVA Player targetting and KPD barrel spin.
+  - AtmosphereFix - Host-Side, Fixes O2 and pressure not filling and dropping at the same rate, leading to pressure being lower than oxygen.
+  - SetCarriableActive - Attempts to fix picking up invisible items which then locks pickup ability.
+  - DeltaTime - Fixes FPS effecting Drone EVA Player targetting and KPD barrel spin.
 - Optimizations
- - DestroyJumpingShipsOnLeave - Host-side, effects networking. Destroys ships jumping in on sector leave (they don't normally get destroyed, just hidden). leads to various enemy ships, care packages, and Reclaimers being left in a hidden state.
- - DestroySpawnersOnLeave - Host-side, effects networking. Destroys spawners on sector leave (they don't normally get destroyed, just hidden).
- - DestroyImpactFXOnLeave - Destroys old impactFX on sector leave (they don't normally get destroyed until there's 1024 of a given effect or the session ends).
+  - DestroyJumpingShipsOnLeave - Host-side, effects networking. Destroys ships jumping in on sector leave (they don't normally get destroyed, just hidden). leads to various enemy ships, care packages, and Reclaimers being left in a hidden state.
+  - DestroySpawnersOnLeave - Host-side, effects networking. Destroys spawners on sector leave (they don't normally get destroyed, just hidden).
+  - DestroyImpactFXOnLeave - Destroys old impactFX on sector leave (they don't normally get destroyed until there's 1024 of a given effect or the session ends).
 
 ### 🎮 Client Usage
 
