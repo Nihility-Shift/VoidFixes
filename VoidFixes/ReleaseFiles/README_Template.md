@@ -22,16 +22,20 @@ Requires: [Dependencies]
 - Fixes
   - AtmosphereFix - Host-Side, Fixes O2 and pressure not filling and dropping at the same rate, leading to pressure being lower than oxygen.
   - SetCarriableActive - Attempts to fix picking up invisible items which then locks pickup ability.
-  - DeltaTime - Fixes FPS effecting Drone EVA Player targetting and KPD barrel spin.
+  - DeltaTime - Fixes FPS effecting Drone EVA Player targetting.
+  - PrivateGameEntries - Client-Side, Disables creation of private room entries in the matchmaking lists.
 - Optimizations
-  - DestroyJumpingShipsOnLeave - Host-side, effects networking. Destroys ships jumping in on sector leave (they don't normally get destroyed, just hidden). leads to various enemy ships, care packages, and Reclaimers being left in a hidden state.
+  - DestroyJumpingShipsOnLeave - Host-side, effects networking. Previously Destroyed ships jumping in on sector leave, which was patched in vanilla 1.0.0. A side effect of the change is the entrypoints being left beyhind, which will be removed by this patch.
   - DestroySpawnersOnLeave - Host-side, effects networking. Destroys spawners on sector leave (they don't normally get destroyed, just hidden).
+	- Edit: Largly patched in 1.0.0, a spawner is created and never destroyed in the starting sector.
   - DestroyImpactFXOnLeave - Destroys old impactFX on sector leave (they don't normally get destroyed until there's 1024 of a given effect or the session ends).
+	- Edit: Post Void Crew 1.0.0, this issue has largly been fixed. Only enable this setting if you deem it necessary.
+  - FullRoomEntries - Client-Side, Disables showing of full rooms in matchmaking lists.
 
 ### 🎮 Client Usage
 
 - Customize fixes enabled via GUI at F5 > Mod Settings > VoidFixes
-- Command "/fix pickup" - Attempts to fix pickup interaction issues. Some incompatibility with SwapItems.
+- Command "/fix pickup" - Attempts to fix pickup interaction issues.
 
 ### 👥 Multiplayer Functionality
 
