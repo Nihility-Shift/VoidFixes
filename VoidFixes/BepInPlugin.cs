@@ -17,9 +17,9 @@ namespace VoidFixes
         {
             Log = Logger;
             DebugLogging = Config.Bind("General", "DebugLogging", true, "Enables Logging");
-            DestroyJumpingShipsOnLeavePatch = Config.Bind("Patches", "DestroyJumpingShipsOnLeave", true, "Host-side, effects networking. Destroys ships jumping in on sector leave (they don't normally get destroyed, just hidden).");
-            DestroySpawnersOnLeavePatch = Config.Bind("Patches", "DestroySpawnersOnLeave", true, "Host-side, effects networking. Destroys spawners on sector leave (they don't normally get destroyed, just hidden).");
-            DestroImpactFXOnLeavePatch = Config.Bind("Patches", "DestroyImpactFXOnLeave", true, "Client-side, Destroys old impactFX on sector leave (they don't normally get destroyed until there's 1024 of a given effect or the session ends).");
+            DestroyJumpingShipsOnLeavePatch = Config.Bind("Patches", "DestroyJumpingShipsOnLeave", true, "Host-side, effects networking. Previously Destroyed ships jumping in on sector leave, which was patched in 1.0.0. A side effect of the change is the entrypoints being left beyhind, which will be removed by this patch.");
+            DestroySpawnersOnLeavePatch = Config.Bind("Patches", "DestroySpawnersOnLeave", true, "Host-side, effects networking. Destroys spawners on sector leave (they don't normally get destroyed, just hidden).\nEdit: Largly patched in 1.0.0, a spawner is created and never destroyed in the starting sector.");
+            DestroImpactFXOnLeavePatch = Config.Bind("Patches", "DestroyImpactFXOnLeave", false, "Client-side, Destroys old impactFX on sector leave (they don't normally get destroyed until there's 1024 of a given effect or the session ends)\nEdit: Post Void Crew 1.0.0, this issue has largly been fixed. Only enable this setting if you deem it necessary.");
             FinalizePerkTreeNullPatch = Config.Bind("Patches", "FinalizePerkTreeNull", true, "Client-Side, Fixes exception which occurs when a player character is loaded.");
             SetCarriableActivePatch = Config.Bind("Patches", "SetCarriableActive", true, "Client-Side, Attempts to fix picking up invisible items which then locks pickup ability. Try '/fix pickup' command if a similar issue is found.");
             CharacterJoinCastsPatch = Config.Bind("Patches", "CharacterJoinCasts", true, "Client-Side, Fixes exceptions which occur when a player character is loaded.");

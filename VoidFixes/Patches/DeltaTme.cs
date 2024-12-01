@@ -203,14 +203,15 @@ namespace VoidFixes.Patches
             }
         }*/
 
-        [HarmonyPatch(typeof(SpinningBarrelAnimator), "UpdateBarrelRoll")]
+        //Fixed 1.0.0
+        /*[HarmonyPatch(typeof(SpinningBarrelAnimator), "UpdateBarrelRoll")]
         class SpinningBarrelAnimatorPatch
         {
             static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
             {
                 return FixedDeltaToDelta(instructions);
             }
-        }
+        }*/
 
         [HarmonyPatch(typeof(SwarmController), "FlyDroneTowardsEVAPlayer")]
         class SwarmControllerPatch

@@ -1,6 +1,4 @@
 ﻿using BufferedEvents.Impacts;
-using CG.Game.SpaceObjects.Controllers.ImpulseJumping;
-using CG.Space;
 using Gameplay.NPC.AI;
 using HarmonyLib;
 using Photon.Pun;
@@ -22,6 +20,7 @@ namespace VoidFixes.Patches
 
         static void Postfix(bool asHost)
         {
+            //Update for Vanilla 1.0.0 - VFX processors now handle old sounds much better.
             //The SFX and VFX processors attempt to re-use sounds, but often forget to re-use sounds after jumping. These end up staying until the client leaves the session. This method will request the pools dispose.
             if (BepinPlugin.Bindings.DestroImpactFXOnLeavePatch.Value)
             {
@@ -32,6 +31,7 @@ namespace VoidFixes.Patches
 
             Object[] FoundObjects;
 
+            //Update for Vanilla 1.0.0 - Most spawners are now taken care of, with the exception of the spawner in the starting sector (I beleive. Not 100% sure where it came from.)
             //Spawners are not deleted after leaving a sector, and stay active. this leads to unnecessary network trafic for Spawners from many jumps in the past.
             if (BepinPlugin.Bindings.DestroySpawnersOnLeavePatch.Value)
             {
@@ -45,43 +45,18 @@ namespace VoidFixes.Patches
             }
 
 
+            //Modified for Vanilla 1.0.0 - While the ships are now deleted in vanilla, their jump arrival positions are not.
             if (BepinPlugin.Bindings.DestroyJumpingShipsOnLeavePatch.Value)
             {
                 //Objects warping into the sector such as supply drops, normal ships, and summoned swarms do not cleanup after leaving a sector.
                 GameSessionSector CurrentSector = GameSessionSectorManager.Instance.ActiveSector;
-                FoundObjects = GameObject.FindObjectsOfType(typeof(AbstractSpaceCraft), true);
+                FoundObjects = GameObject.FindObjectsOfType<PhotonView>();
                 foreach (Object FO in FoundObjects)
                 {
-                    AbstractSpaceCraft convertedFO = (AbstractSpaceCraft)FO;
-                    //Targeted objects are almost always inactive. They are also usually not in the current sector do to jumping. (I accidentally destroyed wreckages lol)
-                    if (!convertedFO.isActiveAndEnabled && convertedFO.Sector != CurrentSector)
+                    if(FO.name == "VoidJumpArrivalPosition(Clone)")
                     {
-                        if (BepinPlugin.Bindings.DebugLogging.Value) BepinPlugin.Log.LogInfo("Attempting to photon destroy " + convertedFO.DisplayName);
-
-
-                        NpcImpulseJumper jumper = convertedFO.GetComponent<NpcImpulseJumper>();
-                        if (jumper != null) //find and destroy entry object from Impulse Jumper
-                        {
-                            if (BepinPlugin.Bindings.DebugLogging.Value) BepinPlugin.Log.LogInfo("Found ImpulseJumper");
-                            PhotonNetwork.Destroy(jumper.state.SectorEntryObject);
-                        }
-                        else //else find and destroy entry object from NPCAI
-                        {
-                            NpcAI jumperNPC = convertedFO.GetComponent<NpcAI>();
-                            if (jumperNPC != null)
-                            {
-                                BehJumpToSector JTSBeh = jumperNPC.ActiveBehaviour as BehJumpToSector;
-                                if (JTSBeh != null)
-                                {
-                                    if (BepinPlugin.Bindings.DebugLogging.Value) BepinPlugin.Log.LogInfo("Found NpcAI Beh");
-                                    ActJumpToSector JTSAct = (ActJumpToSector)actJumpToSectorActionFI.GetValue(JTSBeh);
-                                    PhotonNetwork.Destroy((GameObject)sectorEntryObjectFI.GetValue(JTSAct));
-                                }
-                            }
-                        }
-
-                        //Finally network destroy spacecraft gameobject.
-                        PhotonNetwork.Destroy(convertedFO.GameObject);
+                        PhotonView pv = (PhotonView)FO;
+                        PhotonNetwork.Destroy(pv);
                     }
                 }
             }
@@ -115,17 +90,5 @@ namespace VoidFixes.Patches
                 }
             }
         }
-
-        //Seems to occasionally not get destroyed, unsure why. The active sector should have the care package added as soon as it warps in.
-        //Might not be destroyed because the player left the sector while the care package was still warping in.
-        //Edit: this is an older patch attempt, and should get deleted in later commits.
-        /*[HarmonyPatch(typeof(SpawnUtils), "SpawnCarePackage")]
-        class SpawnCarePackage
-        {
-            static void Postfix(OrbitObject __result)
-            {
-                GameSessionManager.ActiveSession.ActiveSector.AddOrbitObject(__result, false);
-            }
-        }*/
     }
 }

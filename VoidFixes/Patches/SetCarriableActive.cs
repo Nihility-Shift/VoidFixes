@@ -44,7 +44,7 @@ namespace VoidFixes.Patches
     [HarmonyPatch(typeof(CarrierCarryableHandler), "TryInsertCarryable")]
     class SetCarriableActive
     {
-        static void Prefix(AbstractCarryableObject carryable)
+        static void Prefix(CarryableObject carryable)
         {
             if (!BepinPlugin.Bindings.SetCarriableActivePatch.Value) return;
             if (!carryable.gameObject.activeSelf)
