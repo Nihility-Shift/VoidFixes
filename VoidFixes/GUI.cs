@@ -22,6 +22,8 @@ namespace VoidFixes
         bool FrigateEngineeringDoorFixGUIValue;
         bool SetCarriableActivePatchGUIValue;
         bool CharacterJoinCastsPatchGUIValue;
+        bool PrivateGameEntriesPatchGUIValue;
+        bool FullRoomEntriesPatchGUIValue;
         bool WaitDurationNullPatchGUIValue;
         bool CameraAttachPatchGUIValue;
         bool DeltaTimePatchGUIValue;
@@ -39,6 +41,8 @@ namespace VoidFixes
             DrawValueConfig(FinalizePerkTreeNullPatch, ref FinalizePerkTreeNullPatchGUIValue);
             DrawValueConfig(SetCarriableActivePatch, ref SetCarriableActivePatchGUIValue);
             DrawValueConfig(CharacterJoinCastsPatch, ref CharacterJoinCastsPatchGUIValue);
+            DrawValueConfig(PrivateGameEntriesPatch, ref PrivateGameEntriesPatchGUIValue);
+            DrawValueConfig(FullRoomEntriesPatch, ref FullRoomEntriesPatchGUIValue);
             DrawValueConfig(WaitDurationNullPatch, ref WaitDurationNullPatchGUIValue);
             DrawValueConfig(CameraAttachPatch, ref CameraAttachPatchGUIValue);
             DrawValueConfig(DeltaTimePatch, ref DeltaTimePatchGUIValue);
@@ -64,6 +68,8 @@ namespace VoidFixes
             FinalizePerkTreeNullPatchGUIValue = FinalizePerkTreeNullPatch.Value;
             SetCarriableActivePatchGUIValue = SetCarriableActivePatch.Value;
             CharacterJoinCastsPatchGUIValue = CharacterJoinCastsPatch.Value;
+            PrivateGameEntriesPatchGUIValue = PrivateGameEntriesPatch.Value;
+            FullRoomEntriesPatchGUIValue = FullRoomEntriesPatch.Value;
             WaitDurationNullPatchGUIValue = WaitDurationNullPatch.Value;
             CameraAttachPatchGUIValue = CameraAttachPatch.Value;
             DeltaTimePatchGUIValue = DeltaTimePatch.Value;
