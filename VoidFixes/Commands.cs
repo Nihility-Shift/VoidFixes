@@ -35,8 +35,6 @@ namespace VoidFixes
         static string subcommands = "pickup, drop";
 
         //pickup fix
-        static FieldInfo LockInteractionFI = AccessTools.Field(typeof(CarryableInteract), "lockInteraction");
-        static FieldInfo CarryableInsertPromiseFI = AccessTools.Field(typeof(CarrierCarryableHandler), "carryableInsertPromise");
         //static PropertyInfo PromiseCurStatePI = AccessTools.Property(typeof(Promise), "CurState");
         //static FieldInfo insertingCarryableFI = AccessTools.Field(typeof(CarrierCarryableHandler), "insertingCarryable");
         static MethodInfo CarryableOwnerChangeMI = AccessTools.Method(typeof(CarrierCarryableHandler), "CarryableOwnerChange");
@@ -83,8 +81,8 @@ namespace VoidFixes
                         {
                             LocalPlayer.Instance.Payload.gameObject.SetActive(true);
                         }
-                        LockInteractionFI.SetValue(LocalPlayer.Instance.Locomotion.GetAbility<CarryableInteract>(), false);
-                        ((Promise)CarryableInsertPromiseFI.GetValue(LocalPlayer.Instance.CarryableHandler)).Reject(new Exception("forced reject"));
+                        LocalPlayer.Instance.Locomotion.GetAbility<CarryableInteract>().lockInteraction = false;
+                        LocalPlayer.Instance.CarryableHandler.carryableInsertPromise.Reject(new Exception("forced reject"));
                     }
                     break;
                 case "debug":
