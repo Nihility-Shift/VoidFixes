@@ -46,6 +46,11 @@ namespace VoidFixes.Patches
     {
         static void Prefix(CarryableObject carryable)
         {
+            if (carryable == null)
+            {
+                BepinPlugin.Log.LogError("SetCarriableActive:Prefix - Carryable is null!");
+            }
+
             if (!BepinPlugin.Bindings.SetCarriableActivePatch.Value) return;
             if (!carryable.gameObject.activeSelf)
             {
