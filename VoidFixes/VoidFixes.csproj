@@ -23,6 +23,7 @@
   <ItemGroup>
     <Compile Remove="Patches\EVAShootDamageTimer.cs" />
     <Compile Remove="Patches\FrigateEngineeringDoorFix.cs" />
+    <Compile Remove="Patches\OfflineHostDisconnect.cs" />
     <Compile Remove="Patches\PhysicsOrder.cs" />
     <Compile Remove="Patches\RefreshRate.cs" />
   </ItemGroup>
