@@ -1,3 +1,5 @@
+## 1.0.3
+
 ## 1.0.2
 - Rebuild for 1.0.0
 - Added PrivateGameEntries patch.

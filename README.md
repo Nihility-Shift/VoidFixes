@@ -4,7 +4,7 @@
 
 # Void Fixes
 
-Version 1.0.2  
+Version 1.0.3  
 For Game Version 1.0.0  
 Developed by Dragon, 18107  
 Requires:  BepInEx-BepInExPack-5.4.2100, VoidCrewModdingTeam-VoidManager-1.2.4
@@ -24,6 +24,7 @@ Requires:  BepInEx-BepInExPack-5.4.2100, VoidCrewModdingTeam-VoidManager-1.2.4
   - SetCarriableActive - Attempts to fix picking up invisible items which then locks pickup ability.
   - DeltaTime - Fixes FPS effecting Drone EVA Player targetting.
   - PrivateGameEntries - Client-Side, Disables creation of private room entries in the matchmaking lists.
+  - AstralMapSoftlock - Client-Side, Fixes astral map softlocking when accessing during void enter/exit.
 - Optimizations
   - DestroyJumpingShipsOnLeave - Host-side, effects networking. Previously Destroyed ships jumping in on sector leave, which was patched in vanilla 1.0.0. A side effect of the change is the entrypoints being left beyhind, which will be removed by this patch.
   - DestroySpawnersOnLeave - Host-side, effects networking. Destroys spawners on sector leave (they don't normally get destroyed, just hidden).
