@@ -1,4 +1,5 @@
 ## 1.0.3
+- Added Astral Map Softlock patck
 
 ## 1.0.2
 - Rebuild for 1.0.0
