@@ -24,6 +24,7 @@ namespace VoidFixes
         bool CharacterJoinCastsPatchGUIValue;
         bool PrivateGameEntriesPatchGUIValue;
         bool FullRoomEntriesPatchGUIValue;
+        bool AstralMapSoftlockPatchGUIValue;
         bool WaitDurationNullPatchGUIValue;
         bool CameraAttachPatchGUIValue;
         bool DeltaTimePatchGUIValue;
@@ -65,11 +66,12 @@ namespace VoidFixes
             DestroyJumpingShipsOnLeavePatchGUIValue = DestroyJumpingShipsOnLeavePatch.Value;
             DestroySpawnersOnLeavePatchGUIValue = DestroySpawnersOnLeavePatch.Value;
             DestroImpactFXOnLeavePatchGUIValue = DestroImpactFXOnLeavePatch.Value;
-            FinalizePerkTreeNullPatchGUIValue = FinalizePerkTreeNullPatch.Value;
+            FinalizePerkTreeNullPatchGUIValue = FinalizePerkTreeNullPatch.Value; 
             SetCarriableActivePatchGUIValue = SetCarriableActivePatch.Value;
             CharacterJoinCastsPatchGUIValue = CharacterJoinCastsPatch.Value;
             PrivateGameEntriesPatchGUIValue = PrivateGameEntriesPatch.Value;
             FullRoomEntriesPatchGUIValue = FullRoomEntriesPatch.Value;
+            AstralMapSoftlockPatchGUIValue = AstralMapSoftlockPatch.Value;
             WaitDurationNullPatchGUIValue = WaitDurationNullPatch.Value;
             CameraAttachPatchGUIValue = CameraAttachPatch.Value;
             DeltaTimePatchGUIValue = DeltaTimePatch.Value;
