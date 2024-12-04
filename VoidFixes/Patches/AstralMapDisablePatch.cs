@@ -7,38 +7,25 @@ using static VoidManager.Utilities.HarmonyHelpers;
 
 namespace VoidFixes.Patches
 {
-    [HarmonyPatch(typeof(AstralMapController), "ToggleUI")]
+    [HarmonyPatch(typeof(AstralMapController), "OnDisable")]
     internal class AstralMapDisablePatch
     {
         //Astral map co-routine to load the map for the current sector/void is stopped early. Couroutine is stopped on UI close, leading to the map getting stuck on it's void entries.
-        //Fix: Replace Behaviour disable with behaviour enable (can't delete, as the behaviour is set to false at an earlier point).
-        //     Add progressionPanel Toggle (Panel is not toggled otherwise).
+        //Fix: Remove OnDisable StopAllCouroutines() call. Devs stated it was moved to OnDestroy() for their fix. It should be auto called by unity making a manual call redundant.
 
 
 
-
-        static void PatchMethod(AstralMapController instance, bool enable)
-        {
-            if (BepinPlugin.Bindings.AstralMapSoftlockPatch.Value)
-            {
-                instance.enabled = true;
-                instance._progressionPanel.Toggle(enable);
-            }
-            else
-            {
-                instance.enabled = enable;
-            }
-        }
         static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
         {
             CodeInstruction[] targetSequence = new CodeInstruction[]
             {
-                    new CodeInstruction(OpCodes.Call, AccessTools.PropertySetter(typeof(Behaviour), "enabled"))
+                new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(MonoBehaviour), "StopAllCoroutines"))
             };
 
+            //Remove StopAllCoroutines call and replace with pop (ldarg_0 has a label, blocking me from removing it easily. Best fix is to pop the stack.)
             CodeInstruction[] patchSequence = new CodeInstruction[]
             {
-                    new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(AstralMapDisablePatch), "PatchMethod"))
+                new CodeInstruction(OpCodes.Pop)
             };
 
             return PatchBySequence(instructions, targetSequence, patchSequence, PatchMode.REPLACE, CheckMode.ALWAYS);
