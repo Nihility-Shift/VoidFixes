@@ -1,7 +1,7 @@
 ﻿using CG.Game.Player;
 using Gameplay.Carryables;
 using HarmonyLib;
-using RSG;
+using Photon.Pun;
 using System;
 using System.Collections.Generic;
 using System.Reflection;
@@ -105,6 +105,28 @@ namespace VoidFixes
         public override List<Argument> Arguments()
         {
             return arguments;
+        }
+    }
+
+    class Disconnect : ChatCommand
+    {
+        public override string[] CommandAliases()
+        {
+            return new string[] { "disconnect" };
+        }
+
+        public override string Description()
+        {
+            return "Simulates a photon disconnect";
+        }
+
+        bool simulating = false;
+
+        public override void Execute(string arguments)
+        {
+            Messaging.Notification("Simulating Connection Loss");
+            simulating = !simulating;
+            PhotonNetwork.NetworkingClient.SimulateConnectionLoss(simulating);
         }
     }
 }
