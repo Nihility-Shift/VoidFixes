@@ -7,7 +7,7 @@
 Version 1.0.5  
 For Game Version 1.1.0  
 Developed by Dragon, 18107  
-Requires:  BepInEx-BepInExPack-5.4.2100, NihilityShift-VoidManager-1.2.4
+Requires:  BepInEx-BepInExPack-5.4.2100, NihilityShift-VoidManager-1.2.8
 
 
 ---------------------
