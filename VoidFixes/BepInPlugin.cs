@@ -25,7 +25,6 @@ namespace VoidFixes
             CharacterJoinCastsPatch = Config.Bind("Patches", "CharacterJoinCasts", true, "Client-Side, Fixes exceptions which occur when a player character is loaded.");
             PrivateGameEntriesPatch = Config.Bind("Patches", "PrivateGameEntries", true, "Client-Side, Disables creation of private room entries in the matchmaking lists.");
             FullRoomEntriesPatch = Config.Bind("Patches", "FullRoomEntries", true, "Client-Side, Disables showing of full rooms in matchmaking lists");
-            AstralMapSoftlockPatch = Config.Bind("Patches", "AstralMapSoftlock", true, "Client-Side, Fixes astral map softlocking when accessing during void enter/exit.");
             WaitDurationNullPatch = Config.Bind("Patches", "WaitDurationNull", true, "Client-Side, Fixes exception which occurs if a reclaimer timer starts while jumping out of the current sector.");
             CameraAttachPatch = Config.Bind("Patches", "CameraAttach", true, "Client-Side, Fixes exception which occurs when a player character is loaded.");
             DeltaTimePatch = Config.Bind("Patches", "DeltaTime", true, "Multiple patches on both client and host. Currently affects EVATargetting. Requires Restart.");
@@ -45,7 +44,6 @@ namespace VoidFixes
             internal static ConfigEntry<bool> CharacterJoinCastsPatch;
             internal static ConfigEntry<bool> PrivateGameEntriesPatch;
             internal static ConfigEntry<bool> FullRoomEntriesPatch;
-            internal static ConfigEntry<bool> AstralMapSoftlockPatch;
             internal static ConfigEntry<bool> WaitDurationNullPatch;
             internal static ConfigEntry<bool> CameraAttachPatch;
             internal static ConfigEntry<bool> DeltaTimePatch;

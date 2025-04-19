@@ -71,7 +71,6 @@ namespace VoidFixes
             CharacterJoinCastsPatchGUIValue = CharacterJoinCastsPatch.Value;
             PrivateGameEntriesPatchGUIValue = PrivateGameEntriesPatch.Value;
             FullRoomEntriesPatchGUIValue = FullRoomEntriesPatch.Value;
-            AstralMapSoftlockPatchGUIValue = AstralMapSoftlockPatch.Value;
             WaitDurationNullPatchGUIValue = WaitDurationNullPatch.Value;
             CameraAttachPatchGUIValue = CameraAttachPatch.Value;
             DeltaTimePatchGUIValue = DeltaTimePatch.Value;
