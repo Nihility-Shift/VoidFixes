@@ -20,7 +20,6 @@ namespace VoidFixes.Patches
 
         static void Postfix(bool asHost)
         {
-            //Update for Vanilla 1.0.0 - VFX processors now handle old sounds much better.
             //The SFX and VFX processors attempt to re-use sounds, but often forget to re-use sounds after jumping. These end up staying until the client leaves the session. This method will request the pools dispose.
             if (BepinPlugin.Bindings.DestroImpactFXOnLeavePatch.Value)
             {

@@ -1,3 +1,7 @@
+## 1.0.5
+- Removed astral map softlock patch.
+- Updated for Void Crew 1.1.0
+
 ## 1.0.4
 - Fixed Astral Map Softlock patch.
 
